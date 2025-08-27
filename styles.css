@@ -1,0 +1,168 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --muted: #94a3b8;
+  --text: #e5e7eb;
+  --accent: #38bdf8;
+  --accent-2: #a78bfa;
+  --ring: rgba(56,189,248,.35);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,.12), transparent 60%),
+              radial-gradient(1000px 700px at -10% 110%, rgba(167,139,250,.10), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border: 1px solid rgba(148,163,184,.18);
+  border-radius: var(--radius);
+  box-shadow: 0 30px 80px rgba(2,6,23,.45), inset 0 1px 0 rgba(255,255,255,.04);
+  overflow: hidden;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 24px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(56,189,248,.08), rgba(167,139,250,.06));
+  border-bottom: 1px solid rgba(148,163,184,.18);
+}
+
+.avatar-wrap {
+  width: 120px; height: 120px; border-radius: 999px; overflow: hidden;
+  border: 2px solid rgba(56,189,248,.4);
+  box-shadow: 0 10px 30px rgba(2,6,23,.35);
+}
+.avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.title h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: .2px; }
+.title p { margin: 0; color: var(--muted); }
+
+.content { padding: 24px; display: grid; gap: 20px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  appearance: none; border: 0; cursor: pointer;
+  padding: 12px 16px; border-radius: 12px; font-weight: 600; font-size: 15px;
+  background: #0b1220; color: var(--text);
+  outline: none; transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+  border: 1px solid rgba(148,163,184,.2);
+  box-shadow: 0 8px 20px rgba(2,6,23,.45);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:focus { box-shadow: 0 0 0 6px var(--ring); }
+
+.btn.accent { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0b1220; border-color: transparent; }
+.btn.ghost { background: #0e1528; }
+
+.uploads {
+  background: rgba(15,23,42,.45);
+  border: 1px dashed rgba(148,163,184,.35);
+  border-radius: 14px; padding: 18px; display: grid; gap: 12px;
+}
+
+.hint { color: var(--muted); font-size: 14px; }
+
+.file-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.file-item {
+  background: #0b1220; border: 1px solid rgba(148,163,184,.18); border-radius: 10px;
+  padding: 10px 12px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 14px;
+}
+.file-item small { color: var(--muted); }
+
+.footer {
+  padding: 16px 24px; border-top: 1px solid rgba(148,163,184,.18); color: var(--muted); font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .header { grid-template-columns: 88px 1fr; }
+  .avatar-wrap { width: 88px; height: 88px; }
+  .title h1 { font-size: 22px; }
+}
+.uploads-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.file-preview h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.thumb {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 6px;
+  border: 1px solid rgba(148,163,184,.3);
+  margin-right: 8px;
+}
+
+.btn-delete {
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-delete:hover {
+  background: #dc2626;
+}
+.uploads h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.file-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.thumb {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 6px;
+  border: 1px solid rgba(148,163,184,.3);
+  margin-right: 8px;
+}
+
+.btn-delete {
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-delete:hover {
+  background: #dc2626;
+}
+
